@@ -37,7 +37,7 @@ pipeline{
         stage('Deploy Image') {
             steps{
                  script {
-                     docker.withRegistry( , DOCKERHUB, ) 
+                     docker.withRegistry(,DOCKERHUB,) 
                      dockerImage.push()
                 }
             }
