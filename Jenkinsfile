@@ -19,6 +19,11 @@ pipeline{
                 }
             }
         }     
+        stage("java build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
         stage("docker build"){
             steps{
                  
