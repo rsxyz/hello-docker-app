@@ -28,8 +28,7 @@ pipeline{
             steps{
                  
                script {
-                    dockerImage=docker.build("${IMAGE}")
-                    dockerImage.tag("${env.BUILD_TAG}")
+                    dockerImage=docker.build("${IMAGE}" + ":${env.BUILD_TAG}")
                     println "Newly generated image, " + dockerImage.id
                 }
             }
